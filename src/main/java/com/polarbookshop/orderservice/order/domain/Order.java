@@ -11,27 +11,27 @@ import org.springframework.data.relational.core.mapping.Table;
 @Table("orders")
 public record Order (
 
-        @Id
-        Long id,
+	@Id
+	Long id,
 
-        String bookIsbn,
-        String bookName,
-        Double bookPrice,
-        Integer quantity,
-        OrderStatus status,
+	String bookIsbn,
+	String bookName,
+	Double bookPrice,
+	Integer quantity,
+	OrderStatus status,
 
-        @CreatedDate
-        Instant createdDate,
+	@CreatedDate
+	Instant createdDate,
 
-        @LastModifiedDate
-        Instant lastModifiedDate,
+	@LastModifiedDate
+	Instant lastModifiedDate,
 
-        @Version
-        int version
+	@Version
+	int version
 ){
 
-    public static Order of(String bookIsbn, String bookName, Double bookPrice, Integer quantity, OrderStatus status) {
-        return new Order(null, bookIsbn, bookName, bookPrice, quantity, status, null, null, 0);
-    }
+	public static Order of(String bookIsbn, String bookName, Double bookPrice, Integer quantity, OrderStatus status) {
+		return new Order(null, bookIsbn, bookName, bookPrice, quantity, status, null, null, 0);
+	}
 
 }
